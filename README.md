@@ -73,23 +73,25 @@ cd /usr/local
 tar --strip-components 1 -xzf /home/superman/Downloads/node-v8.2.1-linux-x64.tar.gz
 ```
 
-Check the installation using
+**Check the installation using**
 
 ```
 which node
 ```
-it should give you output
+**it should give you output**
 
 ```
 usr/local/bin/node
 ```
 
-Check the version
+**Check the version**
 
 ```
 node -v 
 ```
-should give you output
+
+**should give you output*
+
 
 ```
 v8.2.1 (or whichever version you have installed)
@@ -119,13 +121,13 @@ appium
 npm install -g appium-doctor
 ```
 
-then 
+**then **
 
 ```
 appium-doctor
 ```
 
-it will give checklist of which things are okay and which are not like this
+**it will give checklist of which things are okay and which are not like this**
 
 ```
 info AppiumDoctor Appium Doctor v.1.8.0
@@ -178,14 +180,14 @@ gedit /home/userxxx/.bashrc
 vim /home/userxxx/.bashrc
 ```
 
-Add the following lines in your `.bashrc` file 
+**Add the following lines in your `.bashrc` file **
 
 ```
 export JAVA_HOME=/opt/java/jdk1.8.0_201/bin/java          
 export PATH=${PATH}:${JAVA_HOME}/bin
 ```
 
-**run following command to verify the path**
+**Run following command to verify the path**
 
 ```
 echo $JAVA_HOME
@@ -205,15 +207,11 @@ Edit file  bashrc under user path `/home/userxxx/.bashrc`
 gedit /home/userxxx/.bashrc
 vim /home/userxxx/.bashrc
 ```
-Add the following lines into your `bashrc` file
+
+**Add the following lines into your `bashrc` file**
 
 ```
 export ANDROID_HOME=/home/user_name/Android/Sdk
 export PATH=$PATH:/home/user_name/Android/Sdk/tools
 export PATH=$PATH:/home/user_name/Android/Sdk/platform-tools
 ```
-
- 
-
-
-
