@@ -1,48 +1,63 @@
-# Setup Appium Java enviroment
+#Appium Setup environment  
 
 ### Windows Requirements 
 
-* Appium Desktop 1.8.2 
-
-* Node v8.12.0 or higher ``` node -v ```
-* npm 6.7.0 or higher ``` npm -v ```
-* Java "1.8.0_181" ``` java -version ```
-* Appium 1.10.0 or higher ``` appium -v ```
-* Android Studio 3.X or higher 
+* Appium Desktop `1.8.2`
+* Node `v8.12.0` or higher `node -v`
+* npm `6.7.0` or higher `npm -v`
+* Java `1.8.0_181` `java -version`
+* Appium `1.10.0` or higher `appium -v`
+* Android Studio `3.X` or higher 
 
 
 **Node Js Installation**
 
-Download Node Js LTS version from (https://nodejs.org/es/) and install it `Netx >> Next>>`
+Download NodeJs LTS version from (https://nodejs.org/es/) and install it,
+ 
+ ```
+Not a big deal just 
+Netx >> Next>> Next>>
+as a normal windows installer ;)
+```
+
+To verify the installation run the following command from the command line A.K.A CMD 
+
+```
+node -v
+```
+
+It will returns something like this(according with your version)
 
 
-**Install appium open a command line aka CMD and run**
+```
+x.x.x
+```
+
+Then run the following command to install appium(a nodeJs version)
 
 ```
 npm install -g appium
 ```
 
-**Install appium-doctor to troubleshoot the errors if any using, run**
+Finally install appium-doctor to troubleshoot the errors(we will run it at the end)
 
 ```
 npm install -g appium-doctor
 ```
 
-
 **Java Installation and configuration**
 
-Download Java from the followin url (https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+Download Java for windows from the following url and install it(same thing next>> next>> next>>)(https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
 
+Setup JAVA HOME and PATH Environments
 
-**Set the JAVA HOME path Enviroments**
-
-Configure your Path enviroment with the following values
+Configure your Path environment with the following values, if you don't know how to configure please read this tutorial first(https://www.computerhope.com/issues/ch000549.htm)
 
 
 ```
-JAVA_HOME = C:\Program Files\Java\jdk1.8.0_181 > Don't forget to configure your Path my friend!
-PATH = C:\Program Files\Java\jdk1.8.0_181\bin > Don't forget to configure your Path my friend!
+JAVA_HOME = C:\Program Files\Java\jdk1.8.0_181 > Don't forget to configure your proper Path my friend!
+PATH = C:\Program Files\Java\jdk1.8.0_181\bin > Don't forget to configure your proper Path my friend!
 ```
 
 **Run following command to verify the installation**
@@ -51,7 +66,7 @@ PATH = C:\Program Files\Java\jdk1.8.0_181\bin > Don't forget to configure your P
 java -version 
 ```
 
-It will give you your version 
+It will return the following result
 
 ```
 java version "1.8.0_181"
@@ -59,45 +74,46 @@ Java(TM) SE Runtime Environment (build 1.8.0_181-b13)
 Java HotSpot(TM) 64-Bit Server VM (build 25.181-b13, mixed mode)
 ```
 
-**Download android studio**
+**Android studio installation and variable configuration**
 
 Download android from (https://developer.android.com/studio/) and install it 
 
 ```
 Just Next Next 
 At the end follow the instrutction to complete the SDK installation
+Its takes several minutes to complete the installation, so be patient 
 ```
 
-**Setup the ANDROID HOME path Enviroments**
+Configure your environment variables according with your path  
 
 ```
-ANDROID_HOME = C:\Users\User\AppData\Local\Android\Sdk 
+ANDROID_HOME = C:\Users\yourPath\AppData\Local\Android\Sdk 
 
-PATH = add the following 3 Paths
+PATH = add the following lines 
 
-C:\Users\User\AppData\Local\Android\Sdk\tools\bin
-C:\Users\User\AppData\Local\Android\Sdk\platform-tools
-C:\Users\User\AppData\Local\Android\Sdk\tools
+C:\Users\yourPath\AppData\Local\Android\Sdk\tools\bin
+C:\Users\yourPath\AppData\Local\Android\Sdk\platform-tools
+C:\Users\yourPath\AppData\Local\Android\Sdk\tools
 ```
 
-Finally run 
+Finally run **Appium-Doctor** from the cmd to verify that everything it's well configured   
 
 ```
 appium-doctor
 ```
 
-**You will see the following output, at least the necessary dependencies must be satisfied, otherwise is not going to work**
+**You will see the following output, at least Diagnostic for necessary dependencies must be satisfied, otherwise is not going to work**
 
 ```
 info AppiumDoctor Appium Doctor v.1.8.0
 info AppiumDoctor ### Diagnostic for necessary dependencies starting ###
 info AppiumDoctor  ✔ The Node.js binary was found at: C:\Program Files\nodejs\node.EXE
 info AppiumDoctor  ✔ Node version is 8.12.0
-info AppiumDoctor  ✔ ANDROID_HOME is set to: C:\Users\User\AppData\Local\Android\Sdk
+info AppiumDoctor  ✔ ANDROID_HOME is set to: C:\Users\yourPath\AppData\Local\Android\Sdk
 info AppiumDoctor  ✔ JAVA_HOME is set to: C:\Program Files\Java\jdk1.8.0_181
-info AppiumDoctor  ✔ adb exists at: C:\Users\User\AppData\Local\Android\Sdk\platform-tools\adb.exe
-info AppiumDoctor  ✔ android exists at: C:\Users\User\AppData\Local\Android\Sdk\tools\android.bat
-info AppiumDoctor  ✔ emulator exists at: C:\Users\User\AppData\Local\Android\Sdk\tools\emulator.exe
+info AppiumDoctor  ✔ adb exists at: C:\Users\yourPath\AppData\Local\Android\Sdk\platform-tools\adb.exe
+info AppiumDoctor  ✔ android exists at: C:\Users\yourPath\AppData\Local\Android\Sdk\tools\android.bat
+info AppiumDoctor  ✔ emulator exists at: C:\Users\yourPath\AppData\Local\Android\Sdk\tools\emulator.exe
 info AppiumDoctor  ✔ Bin directory of %JAVA_HOME% is set
 info AppiumDoctor ### Diagnostic for necessary dependencies completed, no fix needed. ###
 info AppiumDoctor
@@ -179,7 +195,7 @@ v8.2.1 (or whichever version you have installed)
 npm install -g appium
 ```
 
-**Install appium-doctor to troubleshoot the errors if any using**
+**Install appium-doctor to troubleshoot the errors**
 
 ```
 npm install -g appium-doctor
@@ -278,3 +294,150 @@ export ANDROID_HOME=/home/user_name/Android/Sdk
 export PATH=$PATH:/home/user_name/Android/Sdk/tools
 export PATH=$PATH:/home/user_name/Android/Sdk/platform-tools
 ```
+
+### macOS Requirements  
+
+**Node Js Installation**
+
+Install Homebrew https://brew.sh/index_es with the following command
+
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+From the terminal run the following command 
+
+
+```
+brew install nodejs
+```
+
+
+Verify your installation
+
+```
+node -v 
+```
+
+**Install appium**
+
+```
+npm install -g appium
+```
+
+**Install appium-doctor to troubleshoot the errors**
+
+```
+npm install -g appium-doctor
+```
+
+**Android studio setup**
+
+TBD
+
+
+**Java Installation**
+
+
+TBD
+
+
+
+**Environment setup**
+
+
+Edit file bash_profile `/Users/user/.bash_profile`
+
+```
+vi /Users/user/.bash_profile
+
+```
+
+Add the following lines in your `.bash_profile` file 
+
+```
+#### ANDROID_HOME #########
+
+export ANDROID_HOME=/Users/admin/Library/Android/sdk
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$ANDROID_HOME/tools:$PATH
+
+##### JAVA_HOME ########
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home
+export PATH=${PATH}:${JAVA_HOME}/bin
+
+```
+
+**Run the following command to install Carthage**
+
+```
+brew install carthage
+```
+
+**Run the following command to verify the setup**
+
+```
+npm install -g appium-doctor
+```
+
+
+**You will see the following output, at least the necessary dependencies must be satisfied, otherwise is not going to work**
+
+
+```
+info AppiumDoctor Appium Doctor v.1.9.0
+info AppiumDoctor ### Diagnostic for necessary dependencies starting ###
+info AppiumDoctor  ✔ The Node.js binary was found at: /usr/local/bin/node
+info AppiumDoctor  ✔ Node version is 11.10.0
+info AppiumDoctor  ✔ Xcode is installed at: /Applications/Xcode.app/Contents/Developer
+info AppiumDoctor  ✔ Xcode Command Line Tools are installed in: /Applications/Xcode.app/Contents/Developer
+info AppiumDoctor  ✔ DevToolsSecurity is enabled.
+info AppiumDoctor  ✔ The Authorization DB is set up properly.
+info AppiumDoctor  ✔ Carthage was found at: /usr/local/bin/carthage
+info AppiumDoctor  ✔ HOME is set to: /Users/admin
+info AppiumDoctor  ✔ ANDROID_HOME is set to: /Users/admin/Library/Android/sdk
+info AppiumDoctor  ✔ JAVA_HOME is set to: /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home
+info AppiumDoctor  ✔ adb exists at: /Users/admin/Library/Android/sdk/platform-tools/adb
+info AppiumDoctor  ✔ android exists at: /Users/admin/Library/Android/sdk/tools/android
+info AppiumDoctor  ✔ emulator exists at: /Users/admin/Library/Android/sdk/tools/emulator
+info AppiumDoctor  ✔ Bin directory of $JAVA_HOME is set
+info AppiumDoctor ### Diagnostic for necessary dependencies completed, no fix needed. ###
+info AppiumDoctor 
+info AppiumDoctor ### Diagnostic for optional dependencies starting ###
+WARN AppiumDoctor  ✖ Python version required by node-gyp (used by heapdump) should be 2.x
+WARN AppiumDoctor  ✖ opencv4nodejs cannot be found.
+WARN AppiumDoctor  ✖ ffmpeg cannot be found
+WARN AppiumDoctor  ✖ fbsimctl cannot be found
+WARN AppiumDoctor  ✖ applesimutils cannot be found
+WARN AppiumDoctor  ✖ idevicelocation cannot be found
+WARN AppiumDoctor  ✖ ios-deploy cannot be found
+WARN AppiumDoctor  ✖ ios_webkit_debug_proxy cannot be found
+WARN AppiumDoctor  ✖ bundletool.jar cannot be found
+info AppiumDoctor ### Diagnostic for optional dependencies completed, 9 fixes possible. ###
+info AppiumDoctor 
+info AppiumDoctor ### Optional Manual Fixes ###
+info AppiumDoctor The configuration can install optionally. Please do the following manually:
+WARN AppiumDoctor  ➜ Manually configure Python 2.x environment. node-gyp which is NodeJS toolchain requires Python 2.x
+WARN AppiumDoctor  ➜ Why opencv4nodejs is needed and how to install it: https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/image-comparison.md
+WARN AppiumDoctor  ➜ ffmpeg is needed to record screen features. Please read https://www.ffmpeg.org/ to install it
+WARN AppiumDoctor  ➜ Why fbsimctl is needed and how to install it: http://appium.io/docs/en/drivers/ios-xcuitest/
+WARN AppiumDoctor  ➜ Why applesimutils is needed and how to install it: http://appium.io/docs/en/drivers/ios-xcuitest/
+WARN AppiumDoctor  ➜ idevicelocation is used to set geolocation for real device. Please read https://github.com/JonGabilondoAngulo/idevicelocation to install it
+WARN AppiumDoctor  ➜ ios-deploy is used to install iOS applications to real device. Please read http://appium.io/docs/en/drivers/ios-xcuitest-real-devices/ to install it
+WARN AppiumDoctor  ➜ ios_webkit_debug_proxy is used to proxy requets from Appium to MobileSafari running on real device. Please read https://github.com/google/ios-webkit-debug-proxy to install it
+WARN AppiumDoctor  ➜ bundletool.jar is used to handle Android App Bundle. Please read http://appium.io/docs/en/writing-running-appium/android/android-appbundle/ to install it
+info AppiumDoctor 
+info AppiumDoctor ###
+info AppiumDoctor 
+info AppiumDoctor Bye! Run appium-doctor again when all manual fixes have been applied!
+info AppiumDoctor 
+```
+
+
+
+
+
+
+
+
+
