@@ -1,4 +1,4 @@
-#Appium Setup environment  
+###Appium Setup environment  
 
 ### Windows Requirements 
 
@@ -134,6 +134,10 @@ info AppiumDoctor
 info AppiumDoctor Bye! Run appium-doctor again when all manual fixes have been applied!
 info AppiumDoctor
 ```
+Appium Desktop `1.8.2`
+
+Download Appium Desktop (https://github.com/appium/appium-desktop/releases/tag/v1.8.2) and install it 
+
 
 ### Linux Requirements  
 
