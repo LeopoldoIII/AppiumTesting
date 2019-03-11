@@ -146,8 +146,8 @@ Adppium Desktop
   "platformVersion": "6.0.1",
   "deviceName": "Redmi Note 3",
   "noReset": true,
-  "appPackage": "com.anzenbanking.slotf",
-  "appActivity": "com.citibanamex.banamexmobile.splashscreen.presentation.view.SplashActivity",
+  "appPackage": "",
+  "appActivity": "",
   "automationName": "uiautomator2"
 }
 ```
