@@ -138,6 +138,20 @@ Appium Desktop `1.8.2`
 
 Download Appium Desktop (https://github.com/appium/appium-desktop/releases/tag/v1.8.2) and install it 
 
+Adppium Desktop
+
+```
+{
+  "platformName": "android",
+  "platformVersion": "6.0.1",
+  "deviceName": "Redmi Note 3",
+  "noReset": true,
+  "appPackage": "com.anzenbanking.slotf",
+  "appActivity": "com.citibanamex.banamexmobile.splashscreen.presentation.view.SplashActivity",
+  "automationName": "uiautomator2"
+}
+```
+
 
 ### Linux Requirements  
 
