@@ -139,6 +139,15 @@ Appium Desktop `1.8.2`
 Download Appium Desktop (https://github.com/appium/appium-desktop/releases/tag/v1.8.2) and install it 
 
 Adppium Desktop
+* run appium as administrator
+* Select "Start Server vx.x.x" you will see the following line
+
+```
+[Appium] Appium REST http interface listener started on 0.0.0.0:4723
+```
+* Click on the Lupa button 
+* Select Desired Capabilities 
+* On JSON Representation add the following lines, don't forget to adjust al values acording with your divice
 
 ```
 {
