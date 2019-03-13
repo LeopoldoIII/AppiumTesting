@@ -33,6 +33,7 @@ public class TestWebBrowser {
 
         capabilities.setCapability(CapabilityType.BROWSER_NAME, "Chrome");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android");
+        capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
         capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,"");
         capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "");
 
