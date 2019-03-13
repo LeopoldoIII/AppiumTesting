@@ -161,6 +161,10 @@ Adppium Desktop
 }
 ```
 
+* Select "Start Session" button in order to start an interaction with your device. 
+
+* If a error appears read the logs to identify it 
+
 
 ### Linux Requirements  
 
