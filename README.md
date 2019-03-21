@@ -329,13 +329,16 @@ export PATH=$PATH:/home/user_name/Android/Sdk/platform-tools
 ### macOS Requirements  
 
 
-https://stackabuse.com/how-to-uninstall-node-js-from-mac-osx/
+
 
 
 **Node Js Installation**
 
-If you have a completly mess like Luisa use the following tutorial (Install Homebrew https://brew.sh/index_es with the following command)
 
+
+If you have a completly mess like Luisa use the following tutorial (https://stackabuse.com/how-to-uninstall-node-js-from-mac-osx/)
+
+Install Homebrew https://brew.sh/index_es with the following command
 
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
