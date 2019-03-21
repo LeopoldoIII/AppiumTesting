@@ -328,15 +328,18 @@ export PATH=$PATH:/home/user_name/Android/Sdk/platform-tools
 
 ### macOS Requirements  
 
-
-
-
-
 **Node Js Installation**
 
+Before to follow this procedure be sure that you don't have a NodeJs version already installed with the following command
 
+```
+node -v 
+```
+
+If this command returns any value please remove node NodeJs with the procedure below 
 
 If you have a completly mess like Luisa use the following tutorial (https://stackabuse.com/how-to-uninstall-node-js-from-mac-osx/)
+
 
 Install Homebrew https://brew.sh/index_es with the following command
 
@@ -471,12 +474,3 @@ info AppiumDoctor
 info AppiumDoctor Bye! Run appium-doctor again when all manual fixes have been applied!
 info AppiumDoctor 
 ```
-
-
-
-
-
-
-
-
-
