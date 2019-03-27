@@ -19,7 +19,7 @@ public class TestWebBrowser {
     public static AndroidDriver driver;
 
     public static  void main(String[] args) throws MalformedURLException {
-    
+
       /*
         AppiumDriverLocalService service = AppiumDriverLocalService.buildService(new AppiumServiceBuilder().usingDriverExecutable
                 (new File("C:\\Program Files\\nodejs\\node.exe")).withAppiumJS
@@ -28,7 +28,7 @@ public class TestWebBrowser {
         service.start();
 
         */
-        
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         capabilities.setCapability(CapabilityType.BROWSER_NAME, "Chrome");
