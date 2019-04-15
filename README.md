@@ -277,9 +277,12 @@ Download Java from the followin url (https://www.oracle.com/technetwork/java/jav
 Install it in the following path 
 
 ```
-tar -xzf dk-8u201-linux-x64.tar.gz
+tar -xzf jdk-8u201-linux-x64.tar.gz
+```
+Move it to the following path `/opt/java/jdk1.8.0_201/bin/java`
 
-/opt/java/jdk1.8.0_201/bin/java
+```
+mv /opt/java/jdk1.8.0_201/bin/java
 ```
 
 **Set the JAVA HOME path**
