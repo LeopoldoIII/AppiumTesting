@@ -196,7 +196,7 @@ Check the installation using
 ```
 which node
 ```
-it should give you output
+it should give you an output
 
 ```
 usr/local/bin/node
@@ -215,9 +215,14 @@ v8.2.1 (or whichever version you have installed)
 
 **Allow access to the following folders**
 
+
+
 ```
+chmode 777
+
 /usr/local/bin
 /usr/local/lib
+/usr/local/lib/node_modules
 ```
 
 **Install appium**
@@ -232,44 +237,6 @@ npm install -g appium
 npm install -g appium-doctor
 ```
 
-then 
-
-```
-appium-doctor
-```
-
-it will give checklist of which things are okay and which are not like this
-
-```
-info AppiumDoctor Appium Doctor v.1.8.0
-info AppiumDoctor ### Diagnostic for necessary dependencies starting ###
-info AppiumDoctor  ✔ The Node.js binary was found at: /usr/local/bin/node
-info AppiumDoctor  ✔ Node version is 11.9.0
-info AppiumDoctor  ✔ ANDROID_HOME is set to: /home/usuario/Android/Sdk
-info AppiumDoctor  ✔ JAVA_HOME is set to: /opt/java/jdk1.8.0_201
-info AppiumDoctor  ✔ adb exists at: /home/usuario/Android/Sdk/platform-tools/adb
-info AppiumDoctor  ✔ android exists at: /home/usuario/Android/Sdk/tools/android
-info AppiumDoctor  ✔ emulator exists at: /home/usuario/Android/Sdk/tools/emulator
-info AppiumDoctor  ✔ Bin directory of $JAVA_HOME is set
-info AppiumDoctor ### Diagnostic for necessary dependencies completed, no fix needed. ###
-info AppiumDoctor 
-info AppiumDoctor ### Diagnostic for optional dependencies starting ###
-WARN AppiumDoctor  ✖ opencv4nodejs cannot be found.
-info AppiumDoctor  ✔ ffmpeg is installed at: /usr/bin/ffmpeg. ffmpeg version 3.4.4-0ubuntu0.18.04.1 Copyright (c) 2000-2018 the FFmpeg developers
-WARN AppiumDoctor  ✖ bundletool.jar cannot be found
-info AppiumDoctor ### Diagnostic for optional dependencies completed, 2 fixes needed. ###
-info AppiumDoctor 
-info AppiumDoctor ### Optional Manual Fixes ###
-info AppiumDoctor The configuration can install optionally. Please do the following manually:
-WARN AppiumDoctor  ➜ Why opencv4nodejs is needed and how to install it: https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/image-comparison.md
-WARN AppiumDoctor  ➜ bundletool.jar is used to handle Android App Bundle. Please read http://appium.io/docs/en/writing-running-appium/android/android-appbundle/ to install it
-info AppiumDoctor 
-info AppiumDoctor ###
-info AppiumDoctor 
-info AppiumDoctor Bye! Run appium-doctor again when all manual fixes have been applied!
-info AppiumDoctor 
-```
-
 **Java Installation and configuration**
 
 Download Java from the followin url (https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
@@ -279,7 +246,9 @@ Install it in the following path
 ```
 tar -xzf jdk-8u201-linux-x64.tar.gz
 ```
-Move it to the following path `/opt/java/jdk1.8.0_201/bin/java`
+
+Create a folder under `/opt/java/` and move the untar file
+
 
 ```
 mv /opt/java/jdk1.8.0_201/bin/java
@@ -328,6 +297,56 @@ export ANDROID_HOME=/home/user_name/Android/Sdk
 export PATH=$PATH:/home/user_name/Android/Sdk/tools
 export PATH=$PATH:/home/user_name/Android/Sdk/platform-tools
 ```
+
+
+
+
+
+
+
+then 
+
+```
+appium-doctor
+```
+
+it will give checklist of which things are okay and which are not like this
+
+
+
+
+
+
+```
+info AppiumDoctor Appium Doctor v.1.8.0
+info AppiumDoctor ### Diagnostic for necessary dependencies starting ###
+info AppiumDoctor  ✔ The Node.js binary was found at: /usr/local/bin/node
+info AppiumDoctor  ✔ Node version is 11.9.0
+info AppiumDoctor  ✔ ANDROID_HOME is set to: /home/usuario/Android/Sdk
+info AppiumDoctor  ✔ JAVA_HOME is set to: /opt/java/jdk1.8.0_201
+info AppiumDoctor  ✔ adb exists at: /home/usuario/Android/Sdk/platform-tools/adb
+info AppiumDoctor  ✔ android exists at: /home/usuario/Android/Sdk/tools/android
+info AppiumDoctor  ✔ emulator exists at: /home/usuario/Android/Sdk/tools/emulator
+info AppiumDoctor  ✔ Bin directory of $JAVA_HOME is set
+info AppiumDoctor ### Diagnostic for necessary dependencies completed, no fix needed. ###
+info AppiumDoctor 
+info AppiumDoctor ### Diagnostic for optional dependencies starting ###
+WARN AppiumDoctor  ✖ opencv4nodejs cannot be found.
+info AppiumDoctor  ✔ ffmpeg is installed at: /usr/bin/ffmpeg. ffmpeg version 3.4.4-0ubuntu0.18.04.1 Copyright (c) 2000-2018 the FFmpeg developers
+WARN AppiumDoctor  ✖ bundletool.jar cannot be found
+info AppiumDoctor ### Diagnostic for optional dependencies completed, 2 fixes needed. ###
+info AppiumDoctor 
+info AppiumDoctor ### Optional Manual Fixes ###
+info AppiumDoctor The configuration can install optionally. Please do the following manually:
+WARN AppiumDoctor  ➜ Why opencv4nodejs is needed and how to install it: https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/image-comparison.md
+WARN AppiumDoctor  ➜ bundletool.jar is used to handle Android App Bundle. Please read http://appium.io/docs/en/writing-running-appium/android/android-appbundle/ to install it
+info AppiumDoctor 
+info AppiumDoctor ###
+info AppiumDoctor 
+info AppiumDoctor Bye! Run appium-doctor again when all manual fixes have been applied!
+info AppiumDoctor 
+```
+
 
 ### macOS Requirements  
 
