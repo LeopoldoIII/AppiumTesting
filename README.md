@@ -1,4 +1,4 @@
-###Appium Setup environment  
+## Appium Setup environment  
 
 ### Windows Requirements 
 
@@ -10,7 +10,7 @@
 * Android Studio `3.X` or higher 
 
 
-**Node Js Installation**
+## Node Js Installation**
 
 Download NodeJs LTS version from (https://nodejs.org/es/) and install it,
  
@@ -45,7 +45,8 @@ Finally install appium-doctor to troubleshoot the errors(we will run it at the e
 npm install -g appium-doctor
 ```
 
-**Java Installation and configuration**
+Files you'll put the code you wrote yesterday into
+## Java Installation and configuration**
 
 Download Java for windows from the following url and install it(same thing next>> next>> next>>)(https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
@@ -60,7 +61,7 @@ JAVA_HOME = C:\Program Files\Java\jdk1.8.0_181 > Don't forget to configure your 
 PATH = C:\Program Files\Java\jdk1.8.0_181\bin > Don't forget to configure your proper Path my friend!
 ```
 
-**Run following command to verify the installation**
+## Run following command to verify the installation**
 
 ```
 java -version 
@@ -74,7 +75,7 @@ Java(TM) SE Runtime Environment (build 1.8.0_181-b13)
 Java HotSpot(TM) 64-Bit Server VM (build 25.181-b13, mixed mode)
 ```
 
-**Android studio installation and variable configuration**
+## Android studio installation and variable configuration**
 
 Download android from (https://developer.android.com/studio/) and install it 
 
@@ -102,7 +103,7 @@ Finally run **Appium-Doctor** from the cmd to verify that everything it's well c
 appium-doctor
 ```
 
-**You will see the following output, at least Diagnostic for necessary dependencies must be satisfied, otherwise is not going to work**
+## You will see the following output, at least Diagnostic for necessary dependencies must be satisfied, otherwise is not going to work**
 
 ```
 info AppiumDoctor Appium Doctor v.1.8.0
@@ -168,7 +169,7 @@ Adppium Desktop
 
 ### Linux Requirements  
 
-##TBD
+## TBD
 
 * Appium Desktop 1.8.2 
 
@@ -180,7 +181,7 @@ Adppium Desktop
 
 
 
-**Node Js Installation**
+## Node Js Installation**
 
 Download latest nodejs linux binaries from (https://nodejs.org/download/release/latest/) into a folder for example /home/superman/Downloads (where superman is your username and you have downloaded the file in Downloads)
 
