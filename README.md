@@ -267,7 +267,7 @@ vim /home/userxxx/.bashrc
 Add the following lines in your `.bashrc` file 
 
 ```
-export JAVA_HOME=/opt/java/jdk1.8.0_201/bin/java          
+export JAVA_HOME=/opt/java/jdk1.8.0_201/          
 export PATH=${PATH}:${JAVA_HOME}/bin
 ```
 
