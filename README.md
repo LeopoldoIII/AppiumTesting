@@ -442,7 +442,7 @@ brew install carthage
 **Run the following command to verify the setup**
 
 ```
-npm install -g appium-doctor
+appium-doctor
 ```
 
 
