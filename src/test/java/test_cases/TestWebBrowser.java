@@ -1,5 +1,7 @@
 package test_cases;
 
+import com.google.common.collect.ImmutableMap;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -33,12 +35,14 @@ public class TestWebBrowser {
 
         capabilities.setCapability(CapabilityType.BROWSER_NAME, "Chrome");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android");
+        capabilities.setCapability("chromedriverExecutable", "/usr/local/bin/chromedriver");
+        capabilities.setCapability("appium:chromeOptions", ImmutableMap.of("w3c", false));
         capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
         capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,"");
         capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "");
 
 
-        driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"), capabilities);
+        driver = new AndroidDriver<MobileElement>(new URL("http://localhost:4723/wd/hub"), capabilities);
 
 
         driver.get("http://google.com");
