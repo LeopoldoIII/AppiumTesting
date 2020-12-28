@@ -20,9 +20,10 @@ public class PageWebBrowser {
     @AndroidFindBy(id = "com.android.chrome:id/search_box_text")
     private MobileElement txtBoxSearch;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.ListView/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.TextView")
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/" +
+            "android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.ListView/" +
+            "android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.TextView")
     public MobileElement btnFirstResult;
-
 
 
     // First Functions it calls Mobile Elements
