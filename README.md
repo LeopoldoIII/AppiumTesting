@@ -294,9 +294,9 @@ vim /home/userxxx/.bashrc
 Add the following lines into your `bashrc` file
 
 ```
-export ANDROID_HOME=/home/user_name/Android/Sdk
-export PATH=$PATH:/home/user_name/Android/Sdk/tools
-export PATH=$PATH:/home/user_name/Android/Sdk/platform-tools
+export ANDROID_HOME=~/Android/Sdk/
+export PATH=$PATH:~/Android/Sdk/tools
+export PATH=$PATH:~/Android/Sdk/platform-tools
 ```
 
 
