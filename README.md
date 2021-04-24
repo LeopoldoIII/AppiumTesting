@@ -300,11 +300,6 @@ export PATH=$PATH:~/Android/Sdk/platform-tools
 ```
 
 
-
-
-
-
-
 then 
 
 ```
