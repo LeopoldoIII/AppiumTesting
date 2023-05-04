@@ -183,6 +183,19 @@ Adppium Desktop
 
 ## Node Js Installation**
 
+
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+
+Edit bashrc 
+    
+    code ~/.bashrc
+    
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+    
+    
+
 Download latest nodejs linux binaries from (https://nodejs.org/download/release/latest/) into a folder for example /home/superman/Downloads (where superman is your username and you have downloaded the file in Downloads)
 
 Now install it under `/usr/local`
