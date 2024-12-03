@@ -408,13 +408,13 @@ node -v
 npm install -g appium
 ```
 
-  ~ npm install -g appium
-
-   npm error code UNABLE_TO_GET_ISSUER_CERT_LOCALLY
-   npm error errno UNABLE_TO_GET_ISSUER_CERT_LOCALLY
-   npm error request to https://registry.npmjs.org/appium failed, reason: unable to get local issuer certificate
-
-   npm config set strict-ssl false
+    ~ npm install -g appium
+ 
+    npm error code UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+    npm error errno UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+    npm error request to https://registry.npmjs.org/appium failed, reason: unable to get local issuer certificate
+ 
+    npm config set strict-ssl false
 
 
 
@@ -438,6 +438,21 @@ TBD
 
 **Environment setup**
 
+Appium service 
+
+    brew install appium
+
+To start appium now and restart at login:
+
+    brew services start appium
+
+Or, if you don't want/need a background service you can just run:
+  
+    /opt/homebrew/opt/appium/bin/appium
+
+Appium Inspector
+
+    brew install --cask appium-inspector
 
 Edit file bash_profile `/Users/user/.bash_profile`
 
