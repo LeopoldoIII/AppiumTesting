@@ -410,9 +410,11 @@ npm install -g appium
 
   ~ npm install -g appium
 
-npm error code UNABLE_TO_GET_ISSUER_CERT_LOCALLY
-npm error errno UNABLE_TO_GET_ISSUER_CERT_LOCALLY
-npm error request to https://registry.npmjs.org/appium failed, reason: unable to get local issuer certificate
+   npm error code UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+   npm error errno UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+   npm error request to https://registry.npmjs.org/appium failed, reason: unable to get local issuer certificate
+
+   npm config set strict-ssl false
 
 
 
