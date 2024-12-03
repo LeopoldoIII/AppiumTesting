@@ -361,6 +361,7 @@ info AppiumDoctor
 
 **Node Js Installation**
 
+
 Before to follow this procedure be sure that you don't have a NodeJs version already installed with the following command
 
 ```
@@ -380,11 +381,20 @@ Install Homebrew https://brew.sh/index_es with the following command
 
 From the terminal run the following command 
 
+    brew install nvm
 
-```
-brew install nodejs
-```
+Edit zshrc 
+    
+    code ~/.zshrc
+    
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+Install Node 
+
+    nvm install v22.11.0
+    
 
 Verify your installation
 
@@ -397,6 +407,14 @@ node -v
 ```
 npm install -g appium
 ```
+
+  ~ npm install -g appium
+
+npm error code UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+npm error errno UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+npm error request to https://registry.npmjs.org/appium failed, reason: unable to get local issuer certificate
+
+
 
 **Install appium-doctor to troubleshoot the errors**
 
@@ -434,6 +452,13 @@ Add the following lines in your `.bash_profile` file
 export ANDROID_HOME=/Users/admin/Library/Android/sdk
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 export PATH=$ANDROID_HOME/tools:$PATH
+
+
+      brew install openjdk
+ 
+     sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk \
+          /Library/Java/JavaVirtualMachines/openjdk.jdk
+
 
 ##### JAVA_HOME ########
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home
