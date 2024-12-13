@@ -547,3 +547,22 @@ info AppiumDoctor
 info AppiumDoctor Bye! Run appium-doctor again when all manual fixes have been applied!
 info AppiumDoctor 
 ```
+
+
+
+### Errors 
+
+Could not find a driver for automationName 'XCUITest'
+
+    [AppiumDriver@8764] Encountered internal error running command: Error: Could not find a driver for automationName 'XCUITest' and platformName 'iOS'. Have you installed a driver that supports   
+    those capabilities? Run 'appium driver list --installed' to see. (Lower-level error: Could not find installed driver to support given caps)
+    at DriverConfig.findMatchingDriver (/Users/a317926/.nvm/versions/node/v22.11.0/lib/node_modules/appium/lib/extension/driver-config.js:175:13)
+
+    appium driver list --installed
+
+    appium driver install xcuitest
+
+
+
+
+    
