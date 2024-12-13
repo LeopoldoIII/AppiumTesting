@@ -549,20 +549,47 @@ info AppiumDoctor
 ```
 
 
-
 ### Errors 
 
 Could not find a driver for automationName 'XCUITest'
+
 
     [AppiumDriver@8764] Encountered internal error running command: Error: Could not find a driver for automationName 'XCUITest' and platformName 'iOS'. Have you installed a driver that supports   
     those capabilities? Run 'appium driver list --installed' to see. (Lower-level error: Could not find installed driver to support given caps)
     at DriverConfig.findMatchingDriver (/Users/a317926/.nvm/versions/node/v22.11.0/lib/node_modules/appium/lib/extension/driver-config.js:175:13)
 
-    appium driver list --installed
+```    
+appium driver list --installed
+```
 
-    appium driver install xcuitest
+```   
+appium driver install xcuitest
+appium driver install uiautomator2
+```
+
+### How to find capabilities Android 
 
 
+1. If you have more than one device connected, you can use the `adb devices` command to list all connected devices. Here’s how to do it:
 
+ ```
+ adb devices
+ ```
 
-    
+This command will show you a list of connected devices along with their identifiers. For example:
+
+```
+List of devices attached
+emulator-5554   device
+emulator-5556   device
+```
+
+2. Specify the device when running commands: When you have multiple devices connected, you need to specify which device you want to send commands to by using the `-s` option followed by the device identifier. For example, to get the Android version of a specific device, you can use:
+
+```
+adb -s emulator-5554 shell getprop ro.build.version.release
+```
+
+```
+adb -s emulator-5554 shell getprop ro.product.model
+```
