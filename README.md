@@ -426,73 +426,75 @@ npm install -g appium-doctor
 
 **Android studio setup**
 
-TBD
+1. Install Android Studio (manually or via Homebrew Cask: `brew install --cask android-studio`).
+2. Open Android Studio and complete the SDK setup. By default, the SDK is installed under:
+   `~/Library/Android/sdk`
 
 
 **Java Installation**
 
+Instead of downloading a separate JDK, you can use the OpenJDK that comes bundled with Android Studio. It is located at:
+`/Applications/Android Studio.app/Contents/jbr/Contents/Home`
 
-TBD
 
+**Install Maven**
+
+To build and run the Java project tests, install Maven using Homebrew:
+```bash
+brew install maven
+```
+
+
+**Install Appium Driver**
+
+Appium 2.x requires drivers to be installed separately. Install the Android driver (`UiAutomator2`):
+```bash
+appium driver install uiautomator2
+```
 
 
 **Environment setup**
 
-Appium service 
+Add the environment variables to your shell profile (`~/.zshrc` for default macOS terminal, or `~/.bash_profile` if using bash):
 
-    brew install appium
+```bash
+#### JAVA_HOME (using Android Studio's bundled JDK) #########
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+export PATH="$JAVA_HOME/bin:$PATH"
 
-To start appium now and restart at login:
-
-    brew services start appium
-
-Or, if you don't want/need a background service you can just run:
-  
-    /opt/homebrew/opt/appium/bin/appium
-
-Appium Inspector
-
-    brew install --cask appium-inspector
-
-Edit file bash_profile `/Users/user/.bash_profile`
-
-```
-vi /Users/user/.bash_profile
-
-```
-
-Add the following lines in your `.bash_profile` file 
-
-```
 #### ANDROID_HOME #########
-
-export ANDROID_HOME=/Users/admin/Library/Android/sdk
-export PATH=$ANDROID_HOME/platform-tools:$PATH
-export PATH=$ANDROID_HOME/tools:$PATH
-
-
-      brew install openjdk
- 
-     sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk \
-          /Library/Java/JavaVirtualMachines/openjdk.jdk
-
-
-##### JAVA_HOME ########
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home
-export PATH=${PATH}:${JAVA_HOME}/bin
-
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$PATH"
 ```
 
-**Run the following command to install Carthage**
+**Appium Service**
 
+If you want to start Appium manually:
+```bash
+appium
 ```
+*Note for Appium 2.x*: If your tests are configured to connect to `http://localhost:4723/wd/hub`, you should start the Appium server using:
+```bash
+appium --base-path /wd/hub
+```
+Alternatively, update the driver instantiation URL in your Java code to point to `http://localhost:4723/`.
+
+**Appium Inspector**
+
+```bash
+brew install --cask appium-inspector
+```
+
+**Run the following command to install Carthage** *(Optional: Only needed if you plan to do iOS automation in the future)*
+
+```bash
 brew install carthage
 ```
 
-**Run the following command to verify the setup**
+**Run the following command to verify the Android setup**
 
-```
-appium-doctor
+```bash
+npx @appium/doctor --android
 ```
 
 
