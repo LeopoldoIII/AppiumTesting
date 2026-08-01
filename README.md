@@ -469,13 +469,13 @@ export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/tool
 
 **Appium Service**
 
-If you want to start Appium manually:
+If you want to start Appium manually (enabling automatic Chromedriver downloads to handle modern browser versions):
 ```bash
-appium
+appium --allow-insecure uiautomator2:chromedriver_autodownload
 ```
 *Note for Appium 2.x*: If your tests are configured to connect to `http://localhost:4723/wd/hub`, you should start the Appium server using:
 ```bash
-appium --base-path /wd/hub
+appium --allow-insecure uiautomator2:chromedriver_autodownload --base-path /wd/hub
 ```
 Alternatively, update the driver instantiation URL in your Java code to point to `http://localhost:4723/`.
 
@@ -634,42 +634,58 @@ To execute Cucumber-based tests on macOS, follow these steps:
    ```
 
 2. **Start the Appium Server**:
-   Since the scripts are configured to connect to the default Appium 2 URL (`http://127.0.0.1:4723/`):
+   To allow Appium to automatically download the correct Chromedriver version for your device's web browser, start the Appium server using the insecure feature flag:
    ```bash
-   appium
+   appium --allow-insecure uiautomator2:chromedriver_autodownload
    ```
 
 3. **Run Tests from the Console**:
-   You can run tests using different environments and platforms by passing system properties to Maven:
+   You can trigger tests for various environments and platforms by passing Maven system properties:
    
    * **Run local Android browser tests**:
      ```bash
-     mvn test -Dtest=TestRunner -Dplatform=android -Denv=local
+     mvn clean test -Dtest=TestRunner -Dplatform=android -Denv=local
      ```
    * **Run Android browser tests on Sauce Labs**:
-     Make sure to export your Sauce Labs credentials in the terminal first:
+     Export your Sauce Labs credentials as environment variables, and run:
      ```bash
      export SAUCE_USERNAME="your-sauce-username"
      export SAUCE_ACCESS_KEY="your-sauce-access-key"
-     mvn test -Dtest=TestRunner -Dplatform=android -Denv=saucelabs
+     mvn clean test -Dtest=TestRunner -Dplatform=android -Denv=saucelabs
      ```
    * **Run desktop Chrome Web tests**:
      ```bash
-     mvn test -Dtest=TestRunner -Dplatform=web -Denv=local
+     mvn clean test -Dtest=TestRunner -Dplatform=web -Denv=local
      ```
    * **Run API-only tests (skipping Appium/Selenium driver lifecycle)**:
      ```bash
-     mvn test -Dtest=TestRunner -Dplatform=api
+     mvn clean test -Dtest=TestRunner -Dplatform=api
      ```
 
-4. **Run Framework Unit Tests**:
-   You can run unit tests written with Mockito (which execute locally in milliseconds without booting Appium or browsers):
+4. **Dynamic Capability JSON Profiles**:
+   Capabilities are dynamically loaded from JSON files located in `src/test/resources/config/` based on `env` and `platform` properties:
+   * **Local Android**: `src/test/resources/config/local-android.json`
+   * **Sauce Labs Android**: `src/test/resources/config/saucelabs-android.json`
+
+5. **Run Framework Unit Tests**:
+   Run Mockito unit tests locally in milliseconds without starting Appium or browsers:
    ```bash
    mvn test -Dtest=*Test
    ```
 
-5. **Test Reports**:
+6. **JDK 21 / AspectJ Weaver Compatibility**:
+   To prevent JDK 21 ZIP file parsing issues (`Invalid CEN header` due to old aspectjweaver versions), a dependency override is configured in `pom.xml`:
+   ```xml
+   <dependency>
+       <groupId>org.aspectj</groupId>
+       <artifactId>aspectjweaver</artifactId>
+       <version>1.9.22.1</version>
+   </dependency>
+   ```
+
+7. **Test Reports**:
    Interactive HTML reports will be generated at the following path after the execution:
    `target/cucumber-reports/cucumber-pretty.html`
+
 
 
