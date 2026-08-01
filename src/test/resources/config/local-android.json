@@ -1,0 +1,13 @@
+{
+  "browserName": "Chrome",
+  "platformName": "Android",
+  "deviceName": "Android",
+  "noReset": true,
+  "automationName": "UiAutomator2",
+  "appium:chromeOptions": {
+    "w3c": false
+  },
+  "appPackage": "",
+  "appActivity": "",
+  "appium:chromedriverAutodownload": true
+}

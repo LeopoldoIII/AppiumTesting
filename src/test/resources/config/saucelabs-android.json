@@ -1,0 +1,10 @@
+{
+  "platformName": "Android",
+  "browserName": "Chrome",
+  "appium:deviceName": "Google Pixel 8 Emulator",
+  "appium:platformVersion": "14.0",
+  "appium:automationName": "UiAutomator2",
+  "sauce:options": {
+    "appiumVersion": "2.x"
+  }
+}

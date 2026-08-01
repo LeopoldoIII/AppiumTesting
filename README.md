@@ -595,3 +595,81 @@ adb -s emulator-5554 shell getprop ro.build.version.release
 ```
 adb -s emulator-5554 shell getprop ro.product.model
 ```
+
+
+## Cucumber BDD + POM Migration (macOS)
+
+This project has been updated to support BDD (Behavior-Driven Development) methodology using **Cucumber** integrated with **TestNG** and the **Page Object Model (POM)** pattern.
+
+### Project Directory Structure
+```text
+AppiumTesting
+├── pom.xml                               # Updated Maven dependencies (Cucumber + TestNG)
+└── src
+    └── test
+        ├── java
+        │   ├── pages                     # Page Object classes (POM)
+        │   │   ├── PageExample.java
+        │   │   └── PageWebBrowser.java
+        │   ├── runners                   # Runner class to execute Cucumber tests
+        │   │   └── TestRunner.java
+        │   ├── step_definitions          # Step definitions and hooks implementation
+        │   │   ├── GoogleSearchSteps.java
+        │   │   └── Hooks.java
+        │   └── utils                     # Framework utilities (DriverFactory)
+        │       └── DriverFactory.java
+        └── resources
+            └── features                  # BDD specification files (.feature)
+                └── GoogleSearch.feature
+```
+
+### Test Execution
+
+To execute Cucumber-based tests on macOS, follow these steps:
+
+1. **Reload the Environment**:
+   Make sure to reload your terminal to apply the updated environment variables (`JAVA_HOME` and `ANDROID_HOME`):
+   ```bash
+   source ~/.zshrc
+   ```
+
+2. **Start the Appium Server**:
+   Since the scripts are configured to connect to the default Appium 2 URL (`http://127.0.0.1:4723/`):
+   ```bash
+   appium
+   ```
+
+3. **Run Tests from the Console**:
+   You can run tests using different environments and platforms by passing system properties to Maven:
+   
+   * **Run local Android browser tests**:
+     ```bash
+     mvn test -Dtest=TestRunner -Dplatform=android -Denv=local
+     ```
+   * **Run Android browser tests on Sauce Labs**:
+     Make sure to export your Sauce Labs credentials in the terminal first:
+     ```bash
+     export SAUCE_USERNAME="your-sauce-username"
+     export SAUCE_ACCESS_KEY="your-sauce-access-key"
+     mvn test -Dtest=TestRunner -Dplatform=android -Denv=saucelabs
+     ```
+   * **Run desktop Chrome Web tests**:
+     ```bash
+     mvn test -Dtest=TestRunner -Dplatform=web -Denv=local
+     ```
+   * **Run API-only tests (skipping Appium/Selenium driver lifecycle)**:
+     ```bash
+     mvn test -Dtest=TestRunner -Dplatform=api
+     ```
+
+4. **Run Framework Unit Tests**:
+   You can run unit tests written with Mockito (which execute locally in milliseconds without booting Appium or browsers):
+   ```bash
+   mvn test -Dtest=*Test
+   ```
+
+5. **Test Reports**:
+   Interactive HTML reports will be generated at the following path after the execution:
+   `target/cucumber-reports/cucumber-pretty.html`
+
+
