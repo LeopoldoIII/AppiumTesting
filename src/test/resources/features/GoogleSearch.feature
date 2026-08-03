@@ -1,5 +1,6 @@
 Feature: Google Search from Mobile Browser
 
+  @UI
   Scenario: Search for Appium on Google
     Given the Chrome browser is open on the mobile device
     When I navigate to the page "https://www.google.com"

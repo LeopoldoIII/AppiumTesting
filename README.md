@@ -661,6 +661,10 @@ To execute Cucumber-based tests on macOS, follow these steps:
      ```bash
      mvn clean test -Dtest=TestRunner -Dplatform=api
      ```
+   * **Run tests filtered by Cucumber tags (e.g., `@UI`)**:
+     ```bash
+     mvn clean test -Dtest=TestRunner -Dplatform=android -Denv=local -Dcucumber.filter.tags="@UI"
+     ```
 
 4. **Dynamic Capability JSON Profiles**:
    Capabilities are dynamically loaded from JSON files located in `src/test/resources/config/` based on `env` and `platform` properties:
